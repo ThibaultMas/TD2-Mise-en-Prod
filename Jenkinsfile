@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     def dockerPath = sh(script: 'which docker', returnStdout: true).trim()
-                    sh "${dockerPath} build -t imagetd2 ."
+                    sh '${dockerPath} build -t imagetd2 .'
                 }
             }
         }
