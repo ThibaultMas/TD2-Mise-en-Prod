@@ -18,8 +18,12 @@ pipeline {
                 }
             }
         }
+        stage('Debug') {
+            steps {
+                sh 'env'
+            }
+        }
         stage('Build Docker Image') {
-            agent any
             steps {
                 sh '''
                 docker version
