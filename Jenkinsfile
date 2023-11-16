@@ -2,14 +2,16 @@ pipeline {
     agent any
 
     stages {
-        stage('Stage1') {
+        stage('Project clone') {
             steps {
-                echo 'Hello World'
+                checkout scm
             }
         }
-        stage('Stage2') {
+        stage('Vefify repo') {
             steps {
-                echo 'Hello World'
+                script {
+                    sh 'ls -la'
+                }
             }
         }
         stage('Stage3') {
