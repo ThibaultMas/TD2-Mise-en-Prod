@@ -2,15 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Project clone') {
+        stage('Clone') {
             steps {
                 checkout scm
             }
         }
-        stage('Vefify repo') {
+        stage('Verify cloning') {
             steps {
-                script {
-                    sh 'ls -la'
+                if (env.BUILD_STATUS == 'SUCCESS') {
+                    echo 'Le repository a été cloné avec succès!'
+                } 
+                else {
+                    error 'Échec de la récupération du repository.'
                 }
             }
         }
