@@ -18,18 +18,10 @@ pipeline {
                 }
             }
         }
-        stage('Debug') {
-            steps {
-                sh 'env'
-            }
-        }
         stage('Build Docker Image') {
-            steps { 
-                script {
-                    def dockerPathDebug = sh(script: 'which docker', returnStdout: true).trim()
-                    echo "Debug: Docker Path - ${dockerPathDebug}"
-                    //sh "${dockerPath} build -t imagetd2 ."
-                }
+            agent any
+            steps {
+                sh 'docker build -t imagetd2 .'
             }
         }
         
