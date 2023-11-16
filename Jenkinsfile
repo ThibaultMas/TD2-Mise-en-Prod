@@ -20,14 +20,16 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -it imagetd2 .'
+                script{
+                    sh 'docker build -t imagetd2 .'
+                }
             }
         }
-
-        stage('Run Docker Container') {
-            steps {
-                sh 'docker-compose up -d'
-            }
-        }
+        
+        // stage('Run Docker Container') {
+        //     steps {
+        //         sh 'docker-compose up -d'
+        //     }
+        // }
     }
 }
