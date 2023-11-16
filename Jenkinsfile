@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_PATH = sh(script: 'which docker', returnStdout: true).trim()
-    }
 
     stages {
         stage('Clone') {
@@ -28,7 +25,8 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh '${env.DOCKER_PATH} build -t imagetd2 .'
+                def dockerPath = sh(script: 'which docker', returnStdout: true).trim()
+                sh '${dockerPath} build -t imagetd2 .'
             }
         }
         
