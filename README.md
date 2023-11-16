@@ -9,8 +9,8 @@
 ## Etapes pour build l'application en local : 
 
 - ouvrir un terminal au dossier TD2-MISE-EN-PROD
-- executer la commande <mark> docker build -t *NomImage* . <mark>
-- executer la commande <mark> docker-compose up -d <mark> pour démarer le conteneur
-- Une fois le conteneur lancé, l'app peut être démarée en executant le fichier <mark> CovidApiApplication.java <mark> dans le dossier <mark> covid-api <mark>
-- Un fichier <mark> test.http <mark> présent dans le même dossier contient différentes requêtes pour tester l'application
-- executer la commande <mark> docker-compose down <mark> pour arrêter le conteneur
+- executer la commande **docker build -t *NomImage* .**
+- executer la commande **docker-compose up -d** pour démarer le conteneur
+- Une fois le conteneur lancé, l'app peut être démarée en executant le fichier **CovidApiApplication.java** dans le dossier **covid-api**
+- Un fichier **test.http** présent dans le même dossier contient différentes requêtes pour tester l'application
+- executer la commande **docker-compose down** pour arrêter le conteneur
