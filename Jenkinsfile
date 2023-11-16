@@ -26,8 +26,9 @@ pipeline {
         stage('Build Docker Image') {
             steps { 
                 script {
-                    def dockerPath = sh(script: 'command -v docker', returnStdout: true).trim()
-                    sh "${dockerPath} build -t imagetd2 ."
+                    def dockerPathDebug = sh(script: 'which docker', returnStdout: true).trim()
+                    echo "Debug: Docker Path - ${dockerPathDebug}"
+                    //sh "${dockerPath} build -t imagetd2 ."
                 }
             }
         }
