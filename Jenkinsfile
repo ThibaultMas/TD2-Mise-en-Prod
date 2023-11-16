@@ -26,9 +26,9 @@ pipeline {
         stage('Build Docker Image') {
             steps { 
                 sh '''
-                    def dockerPath = sh(script: 'command -v docker', returnStdout: true).trim()
-                    "${dockerPath} build -t imagetd2 ."
-                    '''
+                    dockerPath=$(command -v docker)
+                    ${dockerPath} build -t imagetd2 .
+                '''
             }
         }
         
