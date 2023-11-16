@@ -19,10 +19,9 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
+            agent any
             steps {
-                script{
-                    sh 'docker build -t imagetd2 .'
-                }
+                sh 'docker build -t imagetd2 .'
             }
         }
         
