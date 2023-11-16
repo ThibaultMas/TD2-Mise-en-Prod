@@ -26,9 +26,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh '''
-                docker version
-                docker info
-                docker build -t imagetd2 .
+                /usr/local/bin/docker build -t imagetd2 .
                 '''
             }
         }
