@@ -10,7 +10,7 @@ pipeline {
         stage('Verify cloning') {
             steps {
                 script {
-                    if (env.BUILD_STATUS == 'SUCCESS') {
+                    if (currentBuild.result == 'SUCCESS') {
                         echo 'Le repository a été cloné avec succès!'
                     } else {
                         error 'Échec de la récupération du repository.'
