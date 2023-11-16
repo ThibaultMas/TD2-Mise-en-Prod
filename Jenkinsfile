@@ -18,9 +18,15 @@ pipeline {
                 }
             }
         }
-        stage('Stage3') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Hello World'
+                sh 'build -it imagetd2 .'
+            }
+        }
+
+        stage('Run Docker Container') {
+            steps {
+                sh 'docker-compose up -d'
             }
         }
     }
