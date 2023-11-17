@@ -23,6 +23,12 @@ pipeline {
                 sh 'docker build -t imagetd2 .'
             }
         }
+
+        stage('Push Docker Image') {
+            steps {
+                sh 'docker push massontitu/imagetd2:latest'
+            }
+        }
         
         stage('Run Docker Container') {
             steps {
