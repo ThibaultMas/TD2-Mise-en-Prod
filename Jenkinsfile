@@ -26,7 +26,7 @@ pipeline {
 
         stage('Push Docker Image') {
             steps {
-                sh 'docker push massontitu/imagetd2:latest'
+                sh 'docker push massontitu/imagetd2'
             }
         }
         
