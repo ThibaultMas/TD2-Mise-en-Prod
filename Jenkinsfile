@@ -24,10 +24,10 @@ pipeline {
             }
         }
         
-        // stage('Run Docker Container') {
-        //     steps {
-        //         sh 'docker-compose up -d'
-        //     }
-        // }
+        stage('Run Docker Container') {
+            steps {
+                sh 'docker-compose up -d'
+            }
+        }
     }
 }
