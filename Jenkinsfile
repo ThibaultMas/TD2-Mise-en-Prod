@@ -29,5 +29,11 @@ pipeline {
                 sh 'docker compose up -d'
             }
         }
+
+        stage('Stop Docker Container') {
+            steps {
+                sh 'docker compose down'
+            }
+        }
     }
 }
