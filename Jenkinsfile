@@ -19,7 +19,6 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
-            agent any
             steps {
                 sh 'docker build -t imagetd2 .'
             }
